@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Contacts</title>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+    <link href="css/styling.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    
+    <script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() 
+	{
+		readCookie();
+	}, false);
+	</script>
+	
+</head>
+<body>
+
+<h1 id="title">Contacts Go Here</h1>
+
+<div id="loginDiv">
+    <span id="userName"></span><br />
+	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+	
+</div>
+
+<div id="accessUIDiv">
+	<br />
+    <button type="button" id="searchColorButton" class="buttons" onclick="deleteUser();"> Delete User </button><br />
+    <button type="button" id="searchColorButton" class="buttons" onclick="deleteContact();"> Delete Contact </button><br />
+	<input type="text" id="searchText1" placeholder="Search by First Name"/>
+	<button type="button" id="searchColorButton" class="buttons" onclick="searchfirstName();"> Search by First Name </button><br />
+	<input type="text" id="searchText2" placeholder="Search by Last Name"/>
+	<button type="button" id="searchColorButton" class="buttons" onclick="searchlastName();"> Search by Last Name </button><br />
+	<span id="colorSearchResult"></span>
+	<p id="colorList">
+	</p><br /><br />
+
+</div>
+
+</body>
+</html>
