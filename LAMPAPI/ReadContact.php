@@ -4,7 +4,7 @@
 	
 	#Initialize
 	$searchResults = "";
-    $ID = $inData["ID"];
+    	$ID = $inData["ID"];
     
 	#Connect to server
 	$conn = new mysqli("localhost", "group17f_AdminWizard", "c71kradehtniepoh.com", "group17f_HopeinDark");
@@ -15,20 +15,21 @@
 	else
 	{
 		#Pulls FirstName from list using string and userID
-		$sql = "select ID, FirstName, LastName, Email, Phone, Relationship, DateCreated from Contacts WHERE UserID = '$ID'";
+		$sql = "select * from Contacts WHERE ID = $ID";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
-			$searchResults .= '"' . $row["ID"] . ',' . $row["FirstName"] . ',' . $row["LastName"] . ',' . $row["Phone"] . ',' . $row["Email"] . ',' . $row["Relationship"] . ',' . $row["DateCreated"] . '"';
+			$row = $result->fetch_assoc();
+			$searchResults .= '"ID: ' . $row["ID"] . '","FirstName: ' . $row["FirstName"] . '","LastName: ' . $row["LastName"] . '","Phone: ' . $row["Phone"] . '","Email: ' . $row["Email"] . '","Relationship: ' . $row["Relationship"] . '","DateCreated: ' . $row["DateCreated"] . '"';
 			/*
 			results: {
-				ID
-				FirstName
-				LastName
-				Phone
-				Email
-				Relationship
-				DateCreated
+				ID: ID
+				FirstName: FirstName
+				LastName: LastName
+				Phone: Phone
+				Email: Email
+				Relationship: Relationship
+				DateCreated: DateCreated
 			}
 			*/
 			returnWithInfo( $searchResults );
