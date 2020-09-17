@@ -17,13 +17,13 @@
 	} 
 	else
 	{
-        $sql = "update Contacts set UserId = '$UserID', FirstName = '$FirstName', LastName = '$LastName', Phone = '$Phone', Email = '$Email', Relationship = '$Relationship' where ID = '$ID'";
+        $sql = "update Contacts set FirstName = '$FirstName', LastName = '$LastName', Phone = '$Phone', Email = '$Email', Relationship = '$Relationship' where ID = '$ID'";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
 		}
 
-		returnWithInfo($UserID, $FirstName, $LastName, $Phone, $Email, $Relationship);
+		returnWithInfo($FirstName, $LastName, $Phone, $Email, $Relationship);
 		$conn->close();
 
 	}
@@ -47,7 +47,7 @@
 
 	function returnWithInfo( $UserID, $FirstName, $LastName, $Phone, $Email, $Relationship )
 	{
-		$retValue = '{"UserID":' . $UserID . ',"FirstName":"' . $FirstName . '","LastName":"' . $LastName . '","Phone":' . $Phone . ',"Email":"' . $Email . '","Relationship":"' . $Relationship . '","error":""}';
+		$retValue = '{"FirstName":"' . $FirstName . '","LastName":"' . $LastName . '","Phone":' . $Phone . ',"Email":"' . $Email . '","Relationship":"' . $Relationship . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
