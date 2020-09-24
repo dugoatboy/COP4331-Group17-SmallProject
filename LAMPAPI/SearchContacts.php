@@ -5,7 +5,6 @@
 	$searchResults = "";
 	$searchCount = 0;
 	$UserID = $inData["UserID"];
-	$SearchType = $inData["SearchType"];
 	
 	$conn = new mysqli("localhost", "group17f_AdminWizard", "c71kradehtniepoh.com", "group17f_HopeinDark");
 	if ($conn->connect_error) 
@@ -14,7 +13,7 @@
 	} 
 	else
 	{
-		$sql = "select ID, FirstName, LastName from Contacts WHERE UserID = $UserID AND $SearchType like '%" . $inData["Search"] . "%'";
+		$sql = "select ID, FirstName, LastName from Contacts WHERE UserID = $UserID OR FirstName like '%" . $inData["Search"] . "%' OR LastName like '%" . $inData["Search"] . "%' OR Email like '%" . $inData["Search"] . "%'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
@@ -28,11 +27,9 @@
 				$searchResults .= '"ID: ' . $row["ID"] . '","FirstName: ' . $row["FirstName"] . '","LastName: ' . $row["LastName"] . '"';
                 /*
                 results: {
-                    1
                     ID
                     FirstName
                     LastName
-                    2
                     ID
                     ...
                 }
