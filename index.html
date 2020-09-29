@@ -20,6 +20,7 @@ body {
 	-webkit-animation: Gradient 15s ease infinite; 
 	-moz-animation: Gradient 15s ease infinite; 
 	animation: Gradient 15s ease infinite;
+	font-family: 'Courier New';
 } 
 
 @-webkit-keyframes Gradient { 
@@ -59,14 +60,14 @@ body {
 </head>
 
 <body class = "text-center">
-<div class="container">
+<div class="container mt-5">
 <!--<div class="d-flex justify-content-center">-->
 <div class="row h-500">
    <div class="col-sm-12 align-self-center">
 	<div class="d-flex justify-content-center">
 
-		<div class="card border-info mb-3 w-50">
-			<div class="card-header bg-dark">
+		<div class="card border-success mb-3 w-50">
+			<div class="card-header bg-dark font-weight-bold text-success">
 				<h3>CONNECT</h3>
 			</div>
 			<div class = "card-body bg-dark">
@@ -84,8 +85,7 @@ body {
 						<input type="password" id="loginPassword" class="form-control" placeholder="password">
 					</div>
 					<div class="form-group">
-						<!--<input type="submit" id="loginButton" value="Login" class="btn float-right login_btn">-->
-						<input type="submit" id="loginButton" value="Login" class="btn float-right login_btn bg-light" onclick="doLogin();">
+						<input type="submit" id="loginButton" value="Login" class="btn float-right login_btn btn-outline-dark bg-success" onclick="doLogin();">
 						<span id="loginResult"></span>
 					</div>
 				</form>
@@ -97,5 +97,6 @@ body {
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 </div>
