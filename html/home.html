@@ -4,17 +4,12 @@
 <head>
 	<title>CONNECT</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<!--	<script src = "code.js"></script>	-->
-<!--	 <script type="text/javascript" src="js/md5.js">
+	<script src = "code.js"></script>	
+	 <script type="text/javascript" src="js/md5.js">
 	</script> 
 	<script type="text/javascript" src="js/code.js">
-	document.addEventListener('DOMContentLoaded', function() 
-	{
-		readCookie();
-	}, false);
 	</script>
-	</script>
--->
+
 <style>
 body { 
 	width: 100wh; 
@@ -30,6 +25,9 @@ body {
 .navbar {
 	width: 100%;
 	font-family: 'Courier New';
+}
+.navbar-brand {
+	font-size: 40px;
 }
 
 .form-group {
@@ -80,11 +78,21 @@ body {
 	<div class="d-flex justify-content-center">
 		<div class="nav container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  			<a class="navbar-brand font-weight-bold text-success">CONNECT</a>
-  			<form class="form-inline">
-    				<input class="form-control mr-sm-2 border-success" type="search" placeholder="Search" aria-label="Search">
-    				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  			</form>
+			<div class="col-lg-4 align-self-center">
+  				<form class="form-inline">
+    					<input class="form-control mr-sm-2 border-success" type="search" placeholder="Search" aria-label="Search">
+    					<button class="btn btn-outline-dark bg-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</div>
+
+			<div class="col-lg-4 align-self-center">
+				<a class="navbar-brand  text-success">CONNECT</a>
+			</div>
+
+			<div class="mx-2 col-lg-4 align-self-center">
+				<button type="button" id="deteteAccountButton" class="btn btn-outline-success btn-space bg-dark my-2 my-sm-0 onclick="deleteAccount();">Delete Account</button>
+				<button type="button" id="logOutButton" class="btn btn-outline-success btn-space bg-dark my-2 my-sm-0 onclick="logOut();">Log Out</button>
+			</div>
 		</nav>
 		</div>
 		
