@@ -4,17 +4,11 @@
 <head>
 	<title>CONNECT</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<!--	<script src = "code.js"></script>	-->
-<!--	 <script type="text/javascript" src="js/md5.js">
-	</script> 
+	<script src = "code.js"></script>	
+	<script type="text/javascript" src="js/md5.js"></script> 
 	<script type="text/javascript" src="js/code.js">
-	document.addEventListener('DOMContentLoaded', function() 
-	{
-		readCookie();
-	}, false);
-	</script>
-	</script>
--->
+	document.addEventListener('DOMContentLoaded', function() {readCookie();}, false);</script>
+
 <style>
 body { 
 	width: 100wh; 
@@ -26,6 +20,10 @@ body {
 	-moz-animation: Gradient 15s ease infinite; 
 	animation: Gradient 15s ease infinite;
 } 
+
+.btn-space {
+    	margin-right: 15px;
+}
 
 .navbar {
 	width: 100%;
@@ -87,17 +85,19 @@ body {
 			</form>
 		</nav>
 		</div>
-
+ 
 		<div>
-			
+			<span id="contactInfo"></span><br /> 
+			<p id="contactInfolist"> </p><br /><br />
 		</div>
 		
 		<div class="fixed-bottom form-group d-flex justify-content-center">
-			<button type="button" id="editButton" class="btn btn-outline-success float-left bg-dark my-2 my-sm-0 onclick="editContact();">Edit</button>
-			<button type="button" id="deleteButton" class="btn btn-outline-success float-right bg-dark my-2 my-sm-0 onclick="deleteContact();">Delete</button>
+			<button type="button" id="editButton" class="btn btn-outline-success btn-space bg-dark my-2 my-sm-0 onclick="editContact();">Edit</button>
 			<!--editContact function should go to edit page (same as create contact page?)/deleteContact ftn should delete contact-->
-		</div>		
-
+			<button type="button" id="deleteButton" class="btn btn-outline-success bg-dark my-2 my-sm-0 onclick="deleteContact();">Delete</button>
+			<!--editContact function should go to edit page (same as create contact page?)/deleteContact ftn should delete contact-->
+		</div>
+		
 	</div>
 </div>
 </div>
