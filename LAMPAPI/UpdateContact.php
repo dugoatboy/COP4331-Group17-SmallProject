@@ -3,7 +3,6 @@
 	
 	#Filling in data
     $ID = $inData["ID"];
-    $UserID = $inData["UserID"];
 	$FirstName = $inData["FirstName"];
 	$LastName = $inData["LastName"];
 	$Phone = $inData["Phone"]; 
@@ -45,7 +44,7 @@
 		sendResultInfoAsJson( $retValue );
 	}
 
-	function returnWithInfo( $UserID, $FirstName, $LastName, $Phone, $Email, $Relationship )
+	function returnWithInfo( $FirstName, $LastName, $Phone, $Email, $Relationship )
 	{
 		$retValue = '{"FirstName":"' . $FirstName . '","LastName":"' . $LastName . '","Phone":' . $Phone . ',"Email":"' . $Email . '","Relationship":"' . $Relationship . '","error":""}';
 		sendResultInfoAsJson( $retValue );
