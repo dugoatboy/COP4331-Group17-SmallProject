@@ -13,15 +13,20 @@
 	} 
 	else
 	{
+	    	$sqli = "DELETE FROM Contacts WHERE UserID = '$UserID'";
 		$sql = "DELETE FROM Users WHERE ID = '$UserID'";
+		$sqlo = "select * from Users WHERE ID = $UserID";
+		$result = $conn->query($sqlo);
+		$conn->query($sqli);
 		
 		if($conn->query($sql)==TRUE && $conn->affected_rows > 0)
 		{
-		    returnWithInfo($UserID, $FirstName, $LastName, $Phone);
+		    $row = $result->fetch_assoc();
+		    returnWithInfo($row["ID"], $row["FirstName"], $row["LastName"]);
 		}
 		else
 		{
-			returnWithError( "No Contact to delete" );
+			returnWithError( "No User to delete" );
 			$conn->close();
 		}
 	}
@@ -43,9 +48,9 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $UserID, $FirstName, $LastName, $Phone)
+	function returnWithInfo( $UserID, $FirstName, $LastName)
 	{
-		$retValue = '{"Deleted: UserID":' . $UserID . ',"FirstName":"' . $FirstName . '","LastName":"' . $LastName . '","Phone":' . $Phone . ',"error":""}';
+		$retValue = '{"Deleted": "","UserID":"' . $UserID . '","FirstName":"' . $FirstName . '","LastName":"' . $LastName . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
